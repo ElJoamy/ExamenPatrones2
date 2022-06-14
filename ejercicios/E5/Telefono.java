@@ -11,7 +11,8 @@ public class Telefono {
         this.ram = new RAM();
         this.cpu = new CPU();
         programasAbiertos.setProgramas("VAROS PROGRMAS ABIERTOS");
-        
+        ram.setCapacityT("8g").setCapacityUtilizada(5).setDescription("XPG Spectrix D606");
+        cpu.setCapacityT("16g").setCapacityUtilizada(5).setDescription("Intel Core i7-7700HQ");
         state = new Apgdo();
     }
 
@@ -47,5 +48,8 @@ public class Telefono {
         this.cpu = cpu;
     }
 
+    public void resourceManager() throws InterruptedException {
+        state.resourceManager(this);
+    }
     
 }
